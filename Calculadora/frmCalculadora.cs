@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
-
-namespace Calculadora
+﻿namespace Calculadora
 {
     public partial class frmCalculadora : Form
     {
@@ -30,7 +22,15 @@ namespace Calculadora
                 a = Convert.ToInt32(variableA.Text);
                 b = int.Parse(variableB.Text);
 
-                resultado = a + b;
+                if (rdbSuma.Checked)
+                    resultado = a + b;
+                if (rdbResta.Checked)
+                    resultado = a - b;
+                if(rdbMulti.Checked)
+                    resultado = a * b;
+                if (rdbDivision.Checked)
+                    resultado = a / b;
+
 
                 MessageBox.Show("El resultado de la suma es: " + resultado.ToString(), "SISTEMA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 reset();
@@ -55,10 +55,15 @@ namespace Calculadora
 
         private void reset()
         {
-             
+
             variableA.ResetText();
             variableB.ResetText();
             variableA.Focus();
+
+        }
+
+        private void rdbMulti_CheckedChanged(object sender, EventArgs e)
+        {
 
         }
     }
