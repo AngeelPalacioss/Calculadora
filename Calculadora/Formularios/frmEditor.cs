@@ -109,5 +109,23 @@ namespace Calculadora.Formularios
             MessageBox.Show("Estadisticas: \n\nPalabras: " + palabras.Length.ToString() + "\nLetras: " + texto.Length.ToString() +
                 "\nParrafos: " + parrafos.Length.ToString() + "\nPalabras: ");
         }
+
+        private void fuenteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ftdEditor.ShowDialog() == DialogResult.OK)
+            {
+                rtbEditor.Font = ftdEditor.Font;
+            }
+        }
+
+        private void colorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (cdEditor.ShowDialog() == DialogResult.OK)
+            {
+                rtbEditor.ForeColor = cdEditor.Color;
+            }
+        }
+
+        
     }
 }
