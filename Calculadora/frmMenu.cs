@@ -57,5 +57,11 @@ namespace Calculadora
 
             frmConta.Show();
         }
+
+        private void xMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmXMLAcces frmXML = new frmXMLAcces();
+            frmXML.Show();
+        }
     }
 }
